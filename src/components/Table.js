@@ -61,14 +61,14 @@ class Table extends Component {
   }
 
   render() {
+    let rows = [];
+
     if (this.props.sortParameter === "name") {
       this.people.sort(this.compareNames);
-    }
-    if (this.props.sortParameter === "birth") {
+    } else if (this.props.sortParameter === "birth") {
       this.people.sort(this.compareDates);
     }
 
-    let rows = [];
     this.people.forEach((element, key) => {
       rows.push(
         <tr key={key}>
